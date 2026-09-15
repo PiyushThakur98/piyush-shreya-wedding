@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import type { FormEvent } from 'react'
 
 type Wish = { name: string; message: string; date: string }
-const KEY = 'ranbir-alia-wishes'
+const KEY = 'piyush-shreya-wishes'
 export function Wishes() {
   const [wishes, setWishes] = useState<Wish[]>([])
   const [name, setName] = useState('')
