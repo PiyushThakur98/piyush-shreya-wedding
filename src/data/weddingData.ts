@@ -29,6 +29,9 @@ export const weddingData = {
   hashtag: '#PiyushWedsShreya',
   blessing: 'With the blessings of our families, we invite you to witness the beginning of our forever.',
   invitation: 'Together with their families, Piyush & Shreya request the pleasure of your company as they celebrate love, laughter, and a lifetime together.',
+  locationLink: 'https://maps.app.goo.gl/WUSDpyDjqGArBHtJ8',
+  contactLink: 'tel:+919650017141',
+  mapEmbedUrl: 'https://www.google.com/maps?q=Golden%20Apple%20Darbar%20Hall%20No.%202%20Pitampura%20Delhi&output=embed',
   events: [
     { id: 'engagement', title: 'Engagement', eyebrow: 'The beginning of forever', date: '7th December 2026', time: '5:00 PM onwards', venue: 'Utsav Sadan', address: 'Kingsway Camp, GTB Nagar', description: 'Join us as we celebrate the promise of a beautiful life together.', dressCode: 'Festive / formal' },
     { id: 'haldi-mehndi', title: 'Haldi / Mehndi', eyebrow: 'A little colour, a lot of joy', date: '9th December 2026', time: '12:00 PM Haldi · 4:00 PM Mehndi', venue: 'A-1736 Greenfield Colony', address: 'Faridabad', description: 'An afternoon of haldi, henna, marigolds, music and easy laughter with our favourite people.', dressCode: 'Festive florals' },
@@ -40,8 +43,8 @@ export const weddingData = {
     { src: imageThree, alt: 'Couple photo 3', position: 'center 32%' },
   ] as CoupleImage[],
   thingsToKnow: [
-    { title: 'Wedding', body: '11th December 2026 · Golden Apple, Darbar Hall No. 2, Pitampura, Delhi' },
-    { title: 'Contact', body: '9811587141 · 9811165025 · 9999016181 · 9650254118' },
+    { title: 'Wedding', body: '11th December 2026 · Golden Apple, Darbar Hall No. 2, Pitampura, Delhi', link: 'https://maps.app.goo.gl/WUSDpyDjqGArBHtJ8', linkLabel: 'View location' },
+    { title: 'Contact', body: '9811587141 · 9811165025 · 9999016181 · 9650254118 · 9650017141', link: 'tel:+919650017141', linkLabel: 'Call 9650017141' },
     { title: 'A gentle reminder', body: 'Please arrive 30 minutes before each celebration. Come comfortable, come festive, come ready to celebrate.' },
   ],
 }
