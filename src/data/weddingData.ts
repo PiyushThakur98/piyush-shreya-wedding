@@ -1,3 +1,7 @@
+import imageOne from './IMG_1494.jpeg'
+import imageTwo from './IMG_1691.jpeg'
+import imageThree from './Snapchat-268013077.jpg'
+
 export type WeddingEvent = {
   id: string
   title: string
@@ -13,6 +17,7 @@ export type WeddingEvent = {
 export type CoupleImage = {
   src: string
   alt: string
+  position?: string
 }
 
 export const weddingData = {
@@ -30,9 +35,9 @@ export const weddingData = {
     { id: 'sangeet', title: 'Sangeet', eyebrow: 'Music under the stars', date: '10th December 2026', time: '7:00 PM onwards', venue: 'A-1736 Greenfield Colony', address: 'Faridabad', description: 'An evening of family performances, old songs, new memories and a little dancing.', dressCode: 'Indian glam' },
   ] as WeddingEvent[],
   coupleImages: [
-    { src: '/src/data/IMG_1494.jpeg', alt: 'Couple photo 1' },
-    { src: '/src/data/IMG_1691.jpeg', alt: 'Couple photo 2' },
-    { src: '/src/data/Snapchat-268013077.jpg', alt: 'Couple photo 3' },
+    { src: imageOne, alt: 'Couple photo 1', position: 'center 28%' },
+    { src: imageTwo, alt: 'Couple photo 2', position: 'center 20%' },
+    { src: imageThree, alt: 'Couple photo 3', position: 'center 32%' },
   ] as CoupleImage[],
   thingsToKnow: [
     { title: 'Wedding', body: '11th December 2026 · Golden Apple, Darbar Hall No. 2, Pitampura, Delhi' },
