@@ -30,7 +30,7 @@ export const weddingData = {
   hashtag: '#PiyushWedsShreya',
   blessing: 'With the blessings of our families, we invite you to witness the beginning of our forever.',
   invitation: 'Together with their families, Piyush & Shreya request the pleasure of your company as they celebrate love, laughter, and a lifetime together.',
-  locationLink: 'https://maps.app.goo.gl/vgS2ECLfFJZhjhKm7',
+  locationLink: 'https://www.google.com/maps/dir/?api=1&destination=Golden+Apple+Darbar+Hall+No.+2+Pitampura+Delhi',
   contactLink: 'tel:+919650017141',
   mapEmbedUrl: 'https://www.google.com/maps?q=Golden%20Apple%20Darbar%20Hall%20No.%202%20Pitampura%20Delhi&output=embed',
   events: [
