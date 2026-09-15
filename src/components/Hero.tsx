@@ -29,10 +29,10 @@ export function Hero() {
       </div>
 
       {reduced ? (
-        <motion.img initial={{ opacity: 0, scale: 1.04 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.1, ease: 'easeOut' }} src="/assets/Image_Final.png" alt="Wedding invitation artwork" className="absolute bottom-[2vh] left-1/2 z-10 w-[112vw] max-w-[1050px] -translate-x-1/2 will-change-transform" />
+        <motion.img initial={{ opacity: 0, scale: 1.04 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.1, ease: 'easeOut' }} src="/assets/Image_Final.png" alt="Wedding invitation artwork" className="absolute bottom-[2vh] left-1/2 z-10 w-[112vw] max-w-[1050px] -translate-x-1/2 scale-[1.1] origin-bottom will-change-transform" />
       ) : (
         <motion.div initial={{ opacity: 0, scale: 1.08 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.2, ease: 'easeOut' }} style={{ scale, y: entranceY, opacity: visualOpacity }} className="absolute inset-x-0 bottom-[2vh] z-10 mx-auto h-[74vh] max-h-[820px] w-full origin-[50%_78%] will-change-transform">
-          <img src="/assets/Image_Final.png" alt="" className="absolute bottom-0 left-1/2 h-full w-full max-w-[1050px] -translate-x-1/2 object-contain object-bottom will-change-transform" />
+          <img src="/assets/Image_Final.png" alt="" className="absolute bottom-0 left-1/2 h-full w-full max-w-[1050px] -translate-x-1/2 scale-[1.1] origin-bottom object-contain object-bottom will-change-transform" />
           <motion.div style={{ opacity: glow }} className="absolute left-1/2 top-[30%] h-[55%] w-[8%] -translate-x-1/2 rounded-full bg-[#fff4cc] blur-3xl" aria-hidden="true" />
         </motion.div>
       )}
