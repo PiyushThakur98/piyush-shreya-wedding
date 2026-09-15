@@ -28,10 +28,10 @@ export function Hero() {
       </div>
 
       {reduced ? (
-        <img src="/assets/temple.png" alt="Ornate Indian temple mandap illustration" className="absolute bottom-[-2px] left-1/2 z-10 w-[112vw] max-w-[1050px] -translate-x-1/2" />
+        <motion.img initial={{ opacity: 0, scale: 1.04 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.1, ease: 'easeOut' }} src="/assets/1789478720474.png" alt="Wedding invitation artwork" className="absolute bottom-[-2px] left-1/2 z-10 w-[112vw] max-w-[1050px] -translate-x-1/2" />
       ) : (
-        <motion.div style={{ scale, y: entranceY, opacity: visualOpacity }} className="absolute inset-x-0 bottom-[-2px] z-10 mx-auto h-[74vh] max-h-[820px] w-full origin-[50%_78%]">
-          <img src="/assets/temple.png" alt="" className="absolute bottom-0 left-1/2 h-full w-full max-w-[1050px] -translate-x-1/2 object-contain object-bottom" />
+        <motion.div initial={{ opacity: 0, scale: 1.08 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.2, ease: 'easeOut' }} style={{ scale, y: entranceY, opacity: visualOpacity }} className="absolute inset-x-0 bottom-[-2px] z-10 mx-auto h-[74vh] max-h-[820px] w-full origin-[50%_78%]">
+          <img src="/assets/1789478720474.png" alt="" className="absolute bottom-0 left-1/2 h-full w-full max-w-[1050px] -translate-x-1/2 object-contain object-bottom" />
           <motion.div style={{ opacity: glow }} className="absolute left-1/2 top-[30%] h-[55%] w-[8%] -translate-x-1/2 rounded-full bg-[#fff4cc] blur-3xl" aria-hidden="true" />
         </motion.div>
       )}
