@@ -20,6 +20,7 @@ export function Functions() {
             <div className="flex gap-3"><Clock3 className="h-4 w-4 shrink-0 text-gold" aria-hidden="true" /><div><dt className="sr-only">Time</dt><dd>{event.time}</dd></div></div>
             <div className="flex gap-3"><MapPin className="h-4 w-4 shrink-0 text-gold" aria-hidden="true" /><div><dt className="sr-only">Venue</dt><dd>{event.venue}<br /><span className="text-cream/45">{event.address}</span></dd></div></div>
           </dl>
+          {event.locationLink ? <a href={event.locationLink} target="_blank" rel="noreferrer" className="mt-5 inline-flex text-[10px] uppercase tracking-[0.2em] text-gold underline-offset-4 hover:underline">View map</a> : null}
           <p className="mt-6 text-[10px] uppercase tracking-[0.2em] text-gold">Dress: {event.dressCode}</p>
         </motion.article>)}
       </div>
