@@ -10,6 +10,11 @@ export type WeddingEvent = {
   dressCode: string
 }
 
+export type CoupleImage = {
+  src: string
+  alt: string
+}
+
 export const weddingData = {
   couple: { groom: 'Piyush', bride: 'Shreya', full: 'Piyush & Shreya' },
   dateISO: '2026-12-11T18:00:00+05:30',
@@ -25,11 +30,10 @@ export const weddingData = {
     { id: 'sangeet', title: 'Sangeet', eyebrow: 'Music under the stars', date: '10th December 2026', time: '7:00 PM onwards', venue: 'A-1736 Greenfield Colony', address: 'Faridabad', description: 'An evening of family performances, old songs, new memories and a little dancing.', dressCode: 'Indian glam' },
   ] as WeddingEvent[],
   coupleImages: [
-    { src: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=85', alt: 'Couple walking together outdoors' },
-    { src: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=85', alt: 'Wedding couple sharing a quiet moment' },
-    { src: 'https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1200&q=85', alt: 'Bride and groom at a wedding celebration' },
-  ],
-  video: { title: 'Our little love story', embedUrl: 'https://www.youtube.com/embed/VIDEO_ID' },
+    { src: '/src/data/IMG_1494.jpeg', alt: 'Couple photo 1' },
+    { src: '/src/data/IMG_1691.jpeg', alt: 'Couple photo 2' },
+    { src: '/src/data/Snapchat-268013077.jpg', alt: 'Couple photo 3' },
+  ] as CoupleImage[],
   thingsToKnow: [
     { title: 'Wedding', body: '11th December 2026 · Golden Apple, Darbar Hall No. 2, Pitampura, Delhi' },
     { title: 'Contact', body: '9811587141 · 9811165025 · 9999016181 · 9650254118' },

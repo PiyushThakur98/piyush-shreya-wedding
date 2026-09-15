@@ -7,7 +7,6 @@ import { Hero } from './components/Hero'
 import { Instagram } from './components/Instagram'
 import { Invitation } from './components/Invitation'
 import { MusicPlayer } from './components/MusicPlayer'
-import { Video } from './components/Video'
 import { Wishes } from './components/Wishes'
 import { weddingData } from './data/weddingData'
 import { motion } from 'framer-motion'
@@ -33,7 +32,6 @@ export default function App() {
     <Functions />
     <Couple />
     <Instagram />
-    <Video />
     <Countdown />
     <ThingsToKnow />
     <Wishes />
