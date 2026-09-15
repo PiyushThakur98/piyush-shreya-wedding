@@ -30,7 +30,7 @@ export const weddingData = {
   hashtag: '#PiyushWedsShreya',
   blessing: 'With the blessings of our families, we invite you to witness the beginning of our forever.',
   invitation: 'Together with their families, Piyush & Shreya request the pleasure of your company as they celebrate love, laughter, and a lifetime together.',
-  locationLink: 'https://www.google.com/maps/search/?api=1&query=Golden+Apple+Darbar+Hall+No.+2+Pitampura+Delhi',
+  locationLink: 'https://maps.app.goo.gl/vgS2ECLfFJZhjhKm7',
   contactLink: 'tel:+919650017141',
   mapEmbedUrl: 'https://www.google.com/maps?q=Golden%20Apple%20Darbar%20Hall%20No.%202%20Pitampura%20Delhi&output=embed',
   events: [
@@ -44,7 +44,7 @@ export const weddingData = {
     { src: imageThree, alt: 'Couple photo 3', position: 'center 32%' },
   ] as CoupleImage[],
   thingsToKnow: [
-    { title: 'Wedding', body: '11th December 2026 · Golden Apple, Darbar Hall No. 2, Pitampura, Delhi', link: 'https://www.google.com/maps/search/?api=1&query=Golden+Apple+Darbar+Hall+No.+2+Pitampura+Delhi', linkLabel: 'View location' },
+    { title: 'Wedding', body: '11th December 2026 · Golden Apple, Darbar Hall No. 2, Pitampura, Delhi', link: 'https://maps.app.goo.gl/vgS2ECLfFJZhjhKm7', linkLabel: 'View location' },
     { title: 'Contact', body: '9811587141 · 9811165025 · 9999016181 · 9650254118 · 9650017141', link: 'tel:+919650017141', linkLabel: 'Call 9650017141' },
     { title: 'A gentle reminder', body: 'Please arrive 30 minutes before each celebration. Come comfortable, come festive, come ready to celebrate.' },
   ],
