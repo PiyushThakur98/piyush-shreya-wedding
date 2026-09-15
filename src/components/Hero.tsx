@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion, useScroll, useSpring, useTransform } from 'framer-motion'
 import { ChevronDown } from 'lucide-react'
 import { useRef } from 'react'
 import { useReducedMotionPreference } from '../lib/useReducedMotion'
@@ -8,10 +8,11 @@ export function Hero() {
   const ref = useRef<HTMLElement>(null)
   const reduced = useReducedMotionPreference()
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] })
-  const scale = useTransform(scrollYProgress, [0, 0.42, 1], [1, 1.08, 2.65])
-  const entranceY = useTransform(scrollYProgress, [0, 1], ['0%', '12%'])
-  const glow = useTransform(scrollYProgress, [0.25, 0.7], [0, 0.9])
-  const visualOpacity = useTransform(scrollYProgress, [0.75, 1], [1, 0])
+  const smoothProgress = useSpring(scrollYProgress, { stiffness: 120, damping: 30, mass: 0.35 })
+  const scale = useTransform(smoothProgress, [0, 0.42, 1], [1, 1.08, 2.65])
+  const entranceY = useTransform(smoothProgress, [0, 1], ['0%', '12%'])
+  const glow = useTransform(smoothProgress, [0.25, 0.7], [0, 0.9])
+  const visualOpacity = useTransform(smoothProgress, [0.75, 1], [1, 0])
 
   return (
     <section ref={ref} aria-label="Wedding invitation cover" className="hero-sky relative min-h-screen overflow-hidden">
@@ -28,10 +29,10 @@ export function Hero() {
       </div>
 
       {reduced ? (
-        <motion.img initial={{ opacity: 0, scale: 1.04 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.1, ease: 'easeOut' }} src="/assets/Image_Final.png" alt="Wedding invitation artwork" className="absolute bottom-[-2px] left-1/2 z-10 w-[112vw] max-w-[1050px] -translate-x-1/2" />
+        <motion.img initial={{ opacity: 0, scale: 1.04 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.1, ease: 'easeOut' }} src="/assets/Image_Final.png" alt="Wedding invitation artwork" className="absolute bottom-[2vh] left-1/2 z-10 w-[112vw] max-w-[1050px] -translate-x-1/2 will-change-transform" />
       ) : (
-        <motion.div initial={{ opacity: 0, scale: 1.08 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.2, ease: 'easeOut' }} style={{ scale, y: entranceY, opacity: visualOpacity }} className="absolute inset-x-0 bottom-[-2px] z-10 mx-auto h-[74vh] max-h-[820px] w-full origin-[50%_78%]">
-          <img src="/assets/Image_Final.png" alt="" className="absolute bottom-0 left-1/2 h-full w-full max-w-[1050px] -translate-x-1/2 object-contain object-bottom" />
+        <motion.div initial={{ opacity: 0, scale: 1.08 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.2, ease: 'easeOut' }} style={{ scale, y: entranceY, opacity: visualOpacity }} className="absolute inset-x-0 bottom-[2vh] z-10 mx-auto h-[74vh] max-h-[820px] w-full origin-[50%_78%] will-change-transform">
+          <img src="/assets/Image_Final.png" alt="" className="absolute bottom-0 left-1/2 h-full w-full max-w-[1050px] -translate-x-1/2 object-contain object-bottom will-change-transform" />
           <motion.div style={{ opacity: glow }} className="absolute left-1/2 top-[30%] h-[55%] w-[8%] -translate-x-1/2 rounded-full bg-[#fff4cc] blur-3xl" aria-hidden="true" />
         </motion.div>
       )}
