@@ -44,7 +44,7 @@ export const weddingData = {
   ] as CoupleImage[],
   thingsToKnow: [
     { title: 'Wedding', body: '11th December 2026 · Golden Apple, Darbar Hall No. 2, Pitampura, Delhi', link: 'https://maps.app.goo.gl/WUSDpyDjqGArBHtJ8', linkLabel: 'View location' },
-    { title: 'Contact', body: '9811587141 · 9811165025 · 9999016181 · 9650254118 · 9650017141', link: 'tel:+919811587141;tel:+919811165025;tel:+919999016181;tel:+919650254118;tel:+919650017141', linkLabel: 'Call all numbers' },
+    { title: 'Contact', body: '9811587141 · 9811165025 · 9999016181 · 9650254118 · 9650017141', link: 'tel:+919650017141', linkLabel: 'Call 9650017141' },
     { title: 'A gentle reminder', body: 'Please arrive 30 minutes before each celebration. Come comfortable, come festive, come ready to celebrate.' },
   ],
 }
