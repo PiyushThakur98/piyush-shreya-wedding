@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Italiana&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { font-family: 'DM Sans', sans-serif; color: #291C1A; background: #F8F0E3; font-synthesis: none; text-rendering: optimizeLegibility; }
+html { scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; background: #F8F0E3; }
+* { box-sizing: border-box; }
+::selection { background: #B5965A; color: #fff9ef; }
+:focus-visible { outline: 2px solid #B5965A; outline-offset: 4px; }
+
+@layer components {
+  .section-shell { @apply mx-auto w-full max-w-6xl px-5 py-20 sm:px-8 sm:py-28 lg:px-10; }
+  .eyebrow { @apply text-[10px] font-semibold uppercase tracking-[0.28em] text-gold sm:text-xs; }
+  .display { @apply font-display font-medium tracking-[-0.025em]; }
+  .gold-rule { @apply h-px w-16 bg-gold; }
+  .ornament { @apply font-display text-gold/80; }
+  .luxury-button { @apply inline-flex items-center justify-center border border-gold bg-maroon px-6 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-cream transition hover:bg-wine disabled:cursor-not-allowed disabled:opacity-50; }
+  .outline-button { @apply inline-flex items-center justify-center border border-gold/70 px-6 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-ink transition hover:bg-gold hover:text-white; }
+}
+
+.cloud { position: absolute; border-radius: 999px; filter: blur(2px); background: rgba(255,255,255,.7); }
+.cloud::before, .cloud::after { content: ''; position: absolute; border-radius: 50%; background: inherit; }
+.cloud::before { width: 55%; height: 120%; left: 18%; top: -55%; }
+.cloud::after { width: 40%; height: 90%; right: 10%; top: -35%; }
+.hero-sky { background: linear-gradient(180deg, #73c8f2 0%, #9edaf4 60%, #d6edf7 100%); }
+.hero-vignette { background: radial-gradient(circle at 50% 65%, rgba(255,255,255,.16), transparent 45%), linear-gradient(180deg, rgba(0,0,0,.04), transparent 28%, rgba(41,28,26,.08)); }
+.pattern { background-image: radial-gradient(circle at 1px 1px, rgba(181,150,90,.20) 1px, transparent 0); background-size: 26px 26px; }
+.maroon-pattern { background-image: radial-gradient(circle at 1px 1px, rgba(181,150,90,.16) 1px, transparent 0); background-size: 22px 22px; }
