@@ -1,4 +1,4 @@
-# Ranbir weds Alia — Luxury Indian Wedding Invitation
+# Piyush weds Shreya — Luxury Indian Wedding Invitation
 
 A mobile-first React + TypeScript + Vite + Tailwind CSS + Framer Motion wedding invitation.
 
