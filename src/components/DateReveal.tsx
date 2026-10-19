@@ -19,7 +19,7 @@ export function DateReveal() {
             {!open ? <motion.span key="prompt" initial={{ opacity: 0, filter: 'blur(4px)' }} animate={{ opacity: 1, filter: 'blur(0px)' }} exit={{ opacity: 0, filter: 'blur(4px)' }} transition={{ duration: 0.35 }} className="relative z-10 mt-4 font-display text-2xl text-maroon">Tap to reveal</motion.span>
               : <motion.span key="date" initial={{ opacity: 0, y: 10, filter: 'blur(4px)' }} animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }} exit={{ opacity: 0, filter: 'blur(4px)' }} transition={{ duration: 0.4 }} className="relative z-10 mt-4 font-display text-4xl text-maroon sm:text-5xl">{weddingData.dateLabel}</motion.span>}
           </AnimatePresence>
-          <span className="relative z-10 mt-3 text-[10px] uppercase tracking-[0.2em] text-ink/50">{open ? weddingData.city : '11 · 12 · 26'}</span>
+          {/* <span className="relative z-10 mt-3 text-[10px] uppercase tracking-[0.2em] text-ink/50">{open ? weddingData.city : '11 · 12 · 26'}</span> */}
         </button>
       </div>
     </div>

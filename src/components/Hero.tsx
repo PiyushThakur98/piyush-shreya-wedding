@@ -25,7 +25,7 @@ export function Hero() {
         <p className="text-[10px] font-semibold uppercase tracking-[0.38em] sm:text-xs">A celebration of love</p>
         <div className="my-4 h-px w-12 bg-white/70" />
         <h1 className="display text-5xl leading-[0.95] drop-shadow-sm sm:text-7xl lg:text-8xl">{weddingData.couple.groom}<br className="sm:hidden" /> &amp; {weddingData.couple.bride}</h1>
-        <p className="mt-5 font-display text-lg italic sm:text-2xl">{weddingData.dateLabel}</p>
+        {/* <p className="mt-5 font-display text-lg italic sm:text-2xl">{weddingData.dateLabel}</p> */}
       </div>
 
       {reduced ? (

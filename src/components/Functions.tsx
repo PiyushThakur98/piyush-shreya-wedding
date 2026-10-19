@@ -6,10 +6,10 @@ export function Functions() {
   return <section id="celebrations" className="maroon-pattern bg-maroon text-cream">
     <div className="section-shell">
       <div className="text-center">
-        <p className="eyebrow text-gold">Three chapters, one celebration</p>
+        <p className="eyebrow text-gold">Four chapters, one celebration</p>
         <h2 className="display mt-3 text-4xl sm:text-6xl">The Celebrations</h2>
       </div>
-      <div className="mt-12 grid gap-5 lg:grid-cols-3">
+      <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
         {weddingData.events.map((event, i) => <motion.article key={event.id} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .2 }} transition={{ delay: i * .08, duration: .65 }} className="border border-gold/45 bg-wine/35 p-6 sm:p-8">
           <p className="eyebrow">{event.eyebrow}</p>
           <h3 className="display mt-3 text-3xl text-cream">{event.title}</h3>
