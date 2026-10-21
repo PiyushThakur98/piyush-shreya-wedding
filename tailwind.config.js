@@ -15,6 +15,10 @@ export default {
         display: ['"Playfair Display"', 'Georgia', 'serif'],
         italian: ['Italiana', '"Times New Roman"', 'serif'],
         sans: ['"DM Sans"', 'Arial', 'sans-serif'],
+        deva: ['"Tiro Devanagari Hindi"', 'serif'],
+      },
+      animation: {
+        'spin-slow': 'spin 60s linear infinite',
       },
       boxShadow: {
         luxury: '0 22px 70px rgba(41, 28, 26, 0.13)',

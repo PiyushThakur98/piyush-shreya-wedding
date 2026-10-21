@@ -1,11 +1,13 @@
 import { ChevronLeft, ChevronRight } from 'lucide-react'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { weddingData } from '../data/weddingData'
 
 export function Carousel() {
   const [index, setIndex] = useState(0)
   const total = weddingData.coupleImages.length
   const go = (delta: number) => setIndex((index + delta + total) % total)
+  // restarts on every change, so a manual click also resets the 5s timer
+  useEffect(() => { const id = window.setTimeout(() => setIndex(i => (i + 1) % total), 5000); return () => clearTimeout(id) }, [index, total])
   return <div className="relative overflow-hidden border border-gold/35 bg-ink p-2">
     <div className="relative aspect-[4/5] sm:aspect-[16/10]">
       {weddingData.coupleImages.map((image, i) => <img key={image.src} src={image.src} alt={image.alt} loading={i === 0 ? 'eager' : 'lazy'} style={{ objectPosition: image.position ?? 'center' }} className={`absolute inset-0 h-full w-full object-cover object-center transition-all duration-700 ease-out ${i === index ? 'scale-100 opacity-100' : 'scale-105 pointer-events-none opacity-0'}`} />)}

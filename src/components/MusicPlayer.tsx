@@ -1,10 +1,16 @@
+import { motion } from 'framer-motion'
 import { Music2, Pause, Play } from 'lucide-react'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
+import { subscribe, toggle } from '../lib/music'
 
 export function MusicPlayer() {
-  const audio = useRef<HTMLAudioElement>(null)
   const [playing, setPlaying] = useState(false)
-  useEffect(() => { const a = audio.current; if (!a) return; const onEnd = () => setPlaying(false); a.addEventListener('ended', onEnd); return () => a.removeEventListener('ended', onEnd) }, [])
-  const toggle = async () => { const a = audio.current; if (!a) return; if (playing) { a.pause(); setPlaying(false) } else { try { await a.play(); setPlaying(true) } catch { setPlaying(false) } } }
-  return <div className="fixed bottom-4 right-4 z-50 flex items-center gap-2 border border-gold/60 bg-cream/95 px-2 py-2 shadow-luxury backdrop-blur-sm"><Music2 className="ml-1 h-4 w-4 text-gold" aria-hidden="true" /><button onClick={toggle} className="p-2 text-maroon hover:bg-ivory" aria-label={playing ? 'Pause wedding music' : 'Play wedding music'}>{playing ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4" />}</button><audio ref={audio} preload="none" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_35a2c0d0c1.mp3?filename=indian-flute-ambient-11018.mp3" /></div>
+  useEffect(() => subscribe(setPlaying), [])
+  return <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 2.4 }} className="fixed bottom-4 right-4 z-50 flex items-center gap-2 rounded-full border border-gold/60 bg-cream/95 py-1.5 pl-3 pr-1.5 shadow-luxury backdrop-blur-sm">
+    <motion.span animate={playing ? { rotate: 360 } : { rotate: 0 }} transition={playing ? { repeat: Infinity, duration: 6, ease: 'linear' } : { duration: .4 }}><Music2 className="h-4 w-4 text-gold" aria-hidden="true" /></motion.span>
+    <span className="flex h-4 items-end gap-[3px]" aria-hidden="true">
+      {[0, 1, 2, 3].map(i => <motion.span key={i} className="w-[3px] rounded-full bg-maroon/70" animate={playing ? { height: ['30%', '100%', '45%', '80%', '30%'] } : { height: '30%' }} transition={playing ? { repeat: Infinity, duration: 1 + i * .15, ease: 'easeInOut', delay: i * .1 } : {}} />)}
+    </span>
+    <button onClick={() => void toggle()} className="rounded-full bg-maroon p-2 text-cream transition hover:bg-wine" aria-label={playing ? 'Pause wedding music' : 'Play wedding music'}>{playing ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4" />}</button>
+  </motion.div>
 }
