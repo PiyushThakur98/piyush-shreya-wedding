@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
-import { weddingData } from '../data/weddingData'
 import { play } from '../lib/music'
 import { Diya, Divider, Lotus, Mandala, Toran } from './Decor'
+import { useT } from '../lib/lang'
 
 const EASE = [.65, 0, .35, 1] as const
 // deterministic gold dust so it doesn't reshuffle on re-render
@@ -44,6 +44,8 @@ function Door({ side, open }: { side: 'left' | 'right'; open: boolean }) {
 }
 
 export function IntroGate({ onOpen, onDone }: { onOpen: () => void; onDone: () => void }) {
+  const t = useT()
+  const weddingData = t.data
   const [open, setOpen] = useState(false)
   useEffect(() => {
     document.body.style.overflow = 'hidden'
@@ -86,13 +88,13 @@ export function IntroGate({ onOpen, onDone }: { onOpen: () => void; onDone: () =
         <motion.p initial={{ opacity: 0, scale: .9, filter: 'blur(6px)' }} animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }} transition={{ delay: .55, duration: 1 }} className="gold-shimmer mt-3 px-2 py-3 font-deva text-5xl leading-normal drop-shadow-[0_2px_12px_rgba(251,191,36,.25)] sm:text-6xl">शुभ विवाह</motion.p>
         <Divider className="mt-3" />
         <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .9 }} className="mt-5 font-display text-3xl sm:text-4xl">{weddingData.couple.groom} <span className="text-gold">&amp;</span> {weddingData.couple.bride}</motion.p>
-        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.1 }} className="mt-3 text-[10px] uppercase tracking-[.3em] text-cream/70">Wedding Invite</motion.p>
+        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.1 }} className="mt-3 text-[10px] uppercase tracking-[.3em] text-cream/70">{t.gate.label}</motion.p>
         <motion.button initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.35 }} whileHover={{ scale: 1.05 }} whileTap={{ scale: .96 }} onClick={enter} autoFocus className="group relative mt-9 inline-flex items-center justify-center overflow-hidden rounded-full border border-gold bg-gradient-to-r from-gold via-amber-300 to-gold px-8 py-3.5 text-xs font-semibold uppercase tracking-[.22em] text-wine shadow-[0_0_30px_rgba(233,207,138,.45)]">
           <span className="absolute inset-0 animate-ping rounded-full border border-gold/70" aria-hidden="true" />
           <motion.span className="absolute inset-y-0 w-1/3 -skew-x-12 bg-gradient-to-r from-transparent via-white/70 to-transparent" initial={{ left: '-40%' }} animate={{ left: ['-40%', '140%'] }} transition={{ repeat: Infinity, duration: 2.4, repeatDelay: 1, ease: 'easeInOut' }} aria-hidden="true" />
-          <span className="relative">Open Invitation</span>
+          <span className="relative">{t.gate.open}</span>
         </motion.button>
-        {/* <p className="mt-4 text-[10px] tracking-[.12em] text-cream/50">Turn your sound on for the full experience</p> */}
+        {/* <p className="mt-4 text-[10px] tracking-[.12em] text-cream/50">{t.gate.sound}</p> */}
       </motion.div>
     </motion.div>
 

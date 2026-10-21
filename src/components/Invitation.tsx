@@ -1,10 +1,12 @@
 import { motion } from 'framer-motion'
-import { weddingData } from '../data/weddingData'
 import { Divider, Mandala, Toran } from './Decor'
+import { useT } from '../lib/lang'
 
 const rise = (delay: number) => ({ initial: { opacity: 0, y: 22 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true, amount: .5 }, transition: { delay, duration: .8, ease: [.22, 1, .36, 1] as const } })
 
 export function Invitation() {
+  const t = useT()
+  const weddingData = t.data
   return <section id="invitation" className="relative overflow-hidden bg-ivory">
     <Toran />
     <Mandala className="pointer-events-none absolute left-1/2 top-1/2 h-[46rem] w-[46rem] -translate-x-1/2 -translate-y-1/2 text-gold/10" />
@@ -17,7 +19,7 @@ export function Invitation() {
         <span className="absolute -bottom-[5px] left-1/2 h-2.5 w-2.5 -translate-x-1/2 rotate-45 bg-gold" aria-hidden="true" />
         <motion.p {...rise(.3)} className="eyebrow">{weddingData.families}</motion.p>
         <motion.p {...rise(.45)} className="mt-4 font-display text-3xl sm:text-4xl">{weddingData.couple.groom} <span className="text-gold">&amp;</span> {weddingData.couple.bride}</motion.p>
-        <motion.p initial={{ opacity: 0, letterSpacing: '0.3em', filter: 'blur(8px)' }} whileInView={{ opacity: 1, letterSpacing: '0em', filter: 'blur(0px)' }} viewport={{ once: true }} transition={{ delay: .65, duration: 1.2 }} className="mt-5 font-italian text-5xl text-maroon sm:text-7xl">Invite You</motion.p>
+        <motion.p initial={{ opacity: 0, letterSpacing: '0.3em', filter: 'blur(8px)' }} whileInView={{ opacity: 1, letterSpacing: '0em', filter: 'blur(0px)' }} viewport={{ once: true }} transition={{ delay: .65, duration: 1.2 }} className="mt-5 font-italian text-5xl text-maroon sm:text-7xl">{t.invite.big}</motion.p>
         <motion.p {...rise(.9)} className="mx-auto mt-5 max-w-lg text-sm leading-7 text-ink/65">{weddingData.invitation}</motion.p>
       </motion.div>
     </div>

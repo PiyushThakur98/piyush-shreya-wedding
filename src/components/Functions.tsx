@@ -1,17 +1,19 @@
 import { motion } from 'framer-motion'
 import { CalendarDays, Clock3, Flame, Flower2, Gem, MapPin, Music } from 'lucide-react'
-import { weddingData } from '../data/weddingData'
 import { Mandala, SectionTitle, Toran } from './Decor'
+import { useT } from '../lib/lang'
 
 const ICONS: Record<string, typeof Gem> = { engagement: Gem, 'haldi-mehndi': Flower2, sangeet: Music, wedding: Flame }
 
 export function Functions() {
+  const t = useT()
+  const weddingData = t.data
   return <section id="celebrations" className="maroon-pattern relative overflow-hidden bg-maroon text-cream">
     <Toran />
     <Mandala className="pointer-events-none absolute -left-48 bottom-0 h-[30rem] w-[30rem] text-gold/10" />
     <Mandala className="pointer-events-none absolute -right-48 top-24 h-[30rem] w-[30rem] text-gold/10" />
     <div className="section-shell relative pt-32 sm:pt-36">
-      <SectionTitle eyebrow="Four chapters, one celebration" title="The Celebrations" light />
+      <SectionTitle eyebrow={t.events.eyebrow} title={t.events.title} light />
       <div className="mt-12 grid gap-5 md:grid-cols-2">
         {weddingData.events.map((event, i) => {
           const Icon = ICONS[event.id] ?? Gem
@@ -28,8 +30,8 @@ export function Functions() {
               <div className="flex gap-3"><MapPin className="h-4 w-4 shrink-0 text-gold" aria-hidden="true" /><div><dt className="sr-only">Venue</dt><dd>{event.venue}<br /><span className="text-cream/45">{event.address}</span></dd></div></div>
             </dl>
             <div className="mt-6 flex flex-wrap items-center justify-between gap-3">
-              <p className="text-[10px] uppercase tracking-[0.2em] text-gold">Dress: {event.dressCode}</p>
-              {event.locationLink ? <a href={event.locationLink} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 rounded-full border border-gold/60 px-4 py-2 text-[10px] uppercase tracking-[0.2em] text-gold transition hover:bg-gold hover:text-wine"><MapPin className="h-3 w-3" aria-hidden="true" />View map</a> : null}
+              <p className="text-[10px] uppercase tracking-[0.2em] text-gold">{t.events.dress}: {event.dressCode}</p>
+              {event.locationLink ? <a href={event.locationLink} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 rounded-full border border-gold/60 px-4 py-2 text-[10px] uppercase tracking-[0.2em] text-gold transition hover:bg-gold hover:text-wine"><MapPin className="h-3 w-3" aria-hidden="true" />{t.events.map}</a> : null}
             </div>
           </motion.article>
         })}

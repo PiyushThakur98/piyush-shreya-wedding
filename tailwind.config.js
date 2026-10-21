@@ -12,9 +12,9 @@ export default {
         ink: '#291C1A',
       },
       fontFamily: {
-        display: ['"Playfair Display"', 'Georgia', 'serif'],
-        italian: ['Italiana', '"Times New Roman"', 'serif'],
-        sans: ['"DM Sans"', 'Arial', 'sans-serif'],
+        display: ['"Playfair Display"', '"Tiro Devanagari Hindi"', 'Georgia', 'serif'],
+        italian: ['Italiana', '"Tiro Devanagari Hindi"', '"Times New Roman"', 'serif'],
+        sans: ['"DM Sans"', 'Hind', 'Arial', 'sans-serif'],
         deva: ['"Tiro Devanagari Hindi"', 'serif'],
       },
       animation: {

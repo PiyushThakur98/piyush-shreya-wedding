@@ -2,9 +2,11 @@ import { motion, useScroll, useSpring, useTransform } from 'framer-motion'
 import { ChevronDown } from 'lucide-react'
 import { useRef } from 'react'
 import { useReducedMotionPreference } from '../lib/useReducedMotion'
-import { weddingData } from '../data/weddingData'
+import { graphemes, useT } from '../lib/lang'
 
 export function Hero({ ready }: { ready: boolean }) {
+  const t = useT()
+  const weddingData = t.data
   const ref = useRef<HTMLElement>(null)
   const reduced = useReducedMotionPreference()
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] })
@@ -22,11 +24,11 @@ export function Hero({ ready }: { ready: boolean }) {
       <div className="cloud left-[30%] top-[7%] h-7 w-24 opacity-40" aria-hidden="true" />
 
       <div className="relative z-20 mx-auto flex min-h-screen max-w-6xl flex-col items-center px-6 pt-[26vh] text-center text-white sm:pt-[14vh]">
-        <motion.p initial={{ opacity: 0, y: 12 }} animate={ready ? { opacity: 1, y: 0 } : {}} transition={{ delay: .9, duration: .8 }} className="text-[10px] font-semibold uppercase tracking-[0.38em] sm:text-xs">A celebration of love</motion.p>
+        <motion.p initial={{ opacity: 0, y: 12 }} animate={ready ? { opacity: 1, y: 0 } : {}} transition={{ delay: .9, duration: .8 }} className="text-[10px] font-semibold uppercase tracking-[0.38em] sm:text-xs">{t.hero.tagline}</motion.p>
         <motion.div initial={{ scaleX: 0 }} animate={ready ? { scaleX: 1 } : {}} transition={{ delay: 1.1, duration: .8 }} className="my-4 h-px w-12 bg-white/70" />
         <h1 className="display text-5xl leading-[0.95] drop-shadow-sm sm:text-7xl lg:text-8xl" aria-label={weddingData.couple.full}>
           {[weddingData.couple.groom, '&', weddingData.couple.bride].map((word, w) => <span key={w} aria-hidden="true" className={`inline-block whitespace-nowrap ${w === 1 ? 'mx-3 max-sm:ml-0' : ''} ${w === 0 ? 'max-sm:block' : ''}`}>
-            {[...word].map((ch, i) => <motion.span key={i} className="inline-block" initial={{ opacity: 0, y: 40, rotateX: -90, filter: 'blur(6px)' }} animate={ready ? { opacity: 1, y: 0, rotateX: 0, filter: 'blur(0px)' } : {}} transition={{ delay: 1.2 + (w * 6 + i) * .06, duration: .7, ease: [.22, 1, .36, 1] }}>{ch}</motion.span>)}
+            {graphemes(word).map((ch, i) => <motion.span key={i} className="inline-block" initial={{ opacity: 0, y: 40, rotateX: -90, filter: 'blur(6px)' }} animate={ready ? { opacity: 1, y: 0, rotateX: 0, filter: 'blur(0px)' } : {}} transition={{ delay: 1.2 + (w * 6 + i) * .06, duration: .7, ease: [.22, 1, .36, 1] }}>{ch}</motion.span>)}
           </span>)}
         </h1>
         {/* <p className="mt-5 font-display text-lg italic sm:text-2xl">{weddingData.dateLabel}</p> */}
@@ -42,7 +44,7 @@ export function Hero({ ready }: { ready: boolean }) {
       )}
 
       <a href="#invitation" className="absolute bottom-7 left-1/2 z-30 -translate-x-1/2 text-center text-white/90 transition hover:text-white" aria-label="Scroll to explore the invitation">
-        <span className="block text-[9px] uppercase tracking-[0.32em]">Scroll to explore</span>
+        <span className="block text-[9px] uppercase tracking-[0.32em]">{t.hero.scroll}</span>
         <ChevronDown className="mx-auto mt-2 h-4 w-4 animate-bounce" aria-hidden="true" />
       </a>
     </section>
