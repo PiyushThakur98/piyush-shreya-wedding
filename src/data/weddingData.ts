@@ -21,15 +21,22 @@ export type CoupleImage = {
   position?: string
 }
 
+export type FamilySide = { role: string; name: string; lines: string[] }
+
 export const weddingData = {
   couple: { groom: 'Piyush', bride: 'Shreya', full: 'Piyush & Shreya' },
   dateISO: '2026-12-11T18:00:00+05:30',
   dateLabel: '11 December 2026',
   city: 'Pitampura, Delhi',
-  families: 'Together with their families',
+  families: 'With great joy',
+  hosts: 'Mrs. Rekha Verma & Mr. Rakesh Verma',
   hashtag: '#PiyushWedsShreya',
   blessing: 'By the grace of God and with the blessings of their elders, two hearts begin their journey of forever.',
-  invitation: 'to join them as they celebrate love, laughter, and a lifetime together.',
+  invitation: 'to the wedding of their beloved son',
+  lineage: [
+    { role: 'The Groom', name: 'Piyush', lines: ['Grandson of Mrs. Kiran Devi and Late Thakur Jagdish Prasad Verma'] },
+    { role: 'The Bride', name: 'Shreya', lines: ['Daughter of Mrs. Bhanu Grover and Mr. Amit Grover', 'Granddaughter of Mrs. Vinay Grover and Late Shri Harish Grover'] },
+  ] as FamilySide[],
   locationLink: 'https://www.google.com/maps/dir/?api=1&destination=Golden+Apple+Darbar+Hall+No.+2+Pitampura+Delhi',
   contactLink: 'tel:+919650017141',
   mapEmbedUrl: 'https://www.google.com/maps?q=Golden%20Apple%20Darbar%20Hall%20No.%202%20Pitampura%20Delhi&output=embed',
