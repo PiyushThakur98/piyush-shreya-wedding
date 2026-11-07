@@ -49,7 +49,7 @@ export const weddingData = {
   coupleImages: [
     { src: imageOne, alt: 'Couple photo 1', position: 'center 28%' },
     { src: imageTwo, alt: 'Couple photo 2', position: 'center 20%' },
-    { src: imageThree, alt: 'Couple photo 3', position: 'center 32%' },
+    { src: imageThree, alt: 'Couple photo 3', position: 'center 45%' },
   ] as CoupleImage[],
   thingsToKnow: [
     { title: 'Contact', body: '9811587141 · 9811165025 · 9999016181 · 9650254118 · 9650017141', link: 'tel:+919650017141', linkLabel: 'Call 9650017141' },
