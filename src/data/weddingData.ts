@@ -1,6 +1,6 @@
-import imageOne from './IMG_1494.jpeg'
-import imageTwo from './IMG_1691.jpeg'
-import imageThree from './Snapchat-268013077.jpg'
+import imageOne from './IMG_20261108_005010.jpg'
+import imageTwo from './IMG_20261108_005535.jpg'
+import imageThree from './IMG_20261108_005225.jpg'
 
 export type WeddingEvent = {
   id: string
